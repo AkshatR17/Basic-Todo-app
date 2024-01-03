@@ -1,3 +1,9 @@
+// Input validation using zod done in types.js, we expect input of type 
+//  {
+//      title: string,
+//      description: string 
+//  }
+
 const z = require('zod');
 
 // For creating a todo
