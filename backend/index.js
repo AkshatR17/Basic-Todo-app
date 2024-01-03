@@ -39,18 +39,17 @@ app.post('/todo', async (req,res)=>{
   
 });
 
-app.get('todos',async (req,res)=>{
+app.get('/todos',async (req,res)=>{
 
     try {
-        const todos = await todo.find();
-        res.json({todo});
+        const todos = await todo.find({});
+        res.json({todos});
     } catch (error) {
         console.log(error);
-        res.json({
-            msg: 'todos not fetched'
+        res.status(404).json({
+            msg: 'todos not found'
         })
     }
-
 
 });
 
