@@ -67,11 +67,7 @@ app.put('/completed',async (req,res)=>{
 
     try {
 
-        await todo.update({
-            _id: userData.id
-        },{
-            completed: true
-        });
+        await todo.findByIdAndUpdate(userData.id, { completed: true });
 
         res.json({
             msg: 'Todo marked as done'
